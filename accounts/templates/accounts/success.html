@@ -1,0 +1,24 @@
+{% extends 'accounts/index.html' %}
+{% block content %}
+    <form class="form__login" method="post">
+        {% csrf_token %}
+        <div class="form__login-container">
+            <div class="form__login__cmp">
+                {% if token %}
+                    <h1 class="form__login__title">COMPLETED TOKEN AUTHENTICATION</h1>
+                    <p>Token: {{ token }}</p>
+                {% else %}
+
+                    <h1>No token</h1>
+
+                {% endif %}
+                <h1>COMPLETED</h1>
+
+                <div class="form__login__utilities">
+                    <a href="{% url 'register' %}">Dont have an accout?</a>
+                    <a href="{% url 'login' %}">Already have an account?</a>
+                </div>
+            </div>
+        </div>
+    </form>
+{% endblock %}

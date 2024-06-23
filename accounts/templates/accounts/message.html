@@ -1,0 +1,18 @@
+{% extends 'accounts/index.html' %}
+{% block content %}
+    <form class="form__login" method="post">
+        {% csrf_token %}
+        <div class="form__login-container">
+            <div class="form__login__cmp">
+                <h1 class="form__login__title">CheckYourEmail</h1>
+
+                <h1>CHECK YOUR EMAIL</h1>
+
+                <div class="form__login__utilities">
+                    <a href="{% url 'register' %}">Dont have an accout?</a>
+                    <a href="{% url 'login' %}">Already have an account?</a>
+                </div>
+            </div>
+        </div>
+    </form>
+{% endblock %}

@@ -1,0 +1,22 @@
+@import "variables";
+
+@mixin telefono {
+    @media (min-width: $telefono) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media (min-width: $tablet) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media (min-width: $desktop) {
+        @content;
+    }
+}
+@mixin xl_desktop {
+    @media (min-width: $xl_desktop) {
+        @content;
+    }
+}

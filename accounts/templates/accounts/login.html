@@ -1,0 +1,30 @@
+{% extends 'accounts/index.html' %}
+{% block content %}
+    <form class="form__login" method="post">
+        {% csrf_token %}
+        <div class="form__login-container">
+            <div class="form__login__cmp">
+                <h1 class="form__login__title">Login </h1>
+
+                {% if messages %}
+                    {% for message in messages %}
+                        <h1> {{ message }}</h1>
+                    {% endfor %}
+                {% endif %}
+
+                {% for field in form %}
+                    <div class="form__login__camp">
+                        <label> {{ field.label}} </label>
+                        {{ field }}
+                    </div>
+                {% endfor %}
+                <input class="form__login__bottom" type="submit" value="Login">
+
+                <div class="form__login__utilities">
+                    <a href="{% url 'register' %}">Dont have an Accout?</a>
+                    <a href="{% url 'forgotPasswd' %}">Forgot Password?</a>
+                </div>
+            </div>
+        </div>
+    </form>
+{% endblock %}

@@ -1,0 +1,97 @@
+@import "../base/mixins";
+
+body{
+  background-color: #080710;
+}
+.form__login{
+  .form__login-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20rem;
+
+
+
+    .form__login__cmp{
+
+      background-color: rgba(255, 255, 255, 0.13);
+      border-radius: .5rem;
+      padding: 5rem;
+      backdrop-filter: blur(1rem);
+      box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);;
+
+
+      .form__login__title{
+        margin-top: 3rem;
+        color: white;
+        text-align: center;
+      }
+
+      .form__login__camp{
+        display: flex;
+        flex-direction: column;
+        margin: 3rem;
+
+
+        input{
+          color: white;
+          width: 30rem;
+          padding: 1rem 1rem;
+          border-radius: 3px;
+          background-color: rgba(255, 255, 255, 0.07);
+
+          &::placeholder{
+            color: darken(white, 40%);
+          }
+
+          &:focus{
+            color: white;
+          }
+
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.07);
+          }
+        }
+        label{
+          margin-bottom: 2rem;
+        }
+
+      }
+
+      .form__login__bottom{
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+        border-radius: 1rem;
+        margin: 0 auto;
+        padding: 2rem 12.8rem;
+        color: black;
+        background-color: white;
+      }
+    }
+
+  }
+  .form__login-container-register{
+    @extend .form__login-container;
+    margin-top: 5rem;
+  }
+
+  label{
+    color: white;
+  }
+}
+
+.form__login__utilities{
+  display: flex;
+  column-gap: 2rem;
+  margin-top: 2rem;
+
+  a{
+    color: white;
+    &:hover{
+      cursor: pointer;
+      color: blue;
+    }
+  }
+
+}

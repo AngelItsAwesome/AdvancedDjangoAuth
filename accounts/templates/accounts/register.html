@@ -1,0 +1,38 @@
+{% extends 'accounts/index.html' %}
+{% block content %}
+    <form class="form__login" method="post">
+        {% csrf_token %}
+        <div class="form__login-container-register">
+            <div class="form__login__cmp">
+                <h1 class="form__login__title">Register </h1>
+
+                {% if form.errors %}
+                    {% for _, errorList in form.errors.items %}
+                        <ul>
+                        {% for error in errorList %}
+                            <li> {{ error }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% endfor %}
+                {% endif %}
+
+                {% for field in form %}
+                    <div class="form__login__camp">
+                        <label> {{ field.label }} </label>
+                        {{ field }}
+                    </div>
+                {% endfor %}
+
+
+
+
+                <input class="form__login__bottom" type="submit" value="Register">
+
+                <div class="form__login__utilities">
+                    <a href="{% url 'login' %}">Already Have An Account?</a>
+                    <a href="{% url 'forgotPasswd' %}">Forgot Password?</a>
+                </div>
+            </div>
+        </div>
+    </form>
+{% endblock %}

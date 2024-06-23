@@ -1,0 +1,29 @@
+{% extends 'accounts/index.html' %}
+{% block content %}
+    <form class="form__login" method="post">
+        {% csrf_token %}
+        <div class="form__login-container">
+            <div class="form__login__cmp">
+                <h1 class="form__login__title">Update your password</h1>
+                    <div class="form__login__camp">
+                        {% if valid %}
+                            {% if form %}
+                                <label class="form__login__label" for="{{ form.password.id_for_label }}">Password:</label>
+                                {{ form.password }}
+                            {% endif %}
+                        {% else %}
+                            <h1>INVALID TOKEN</h1>
+                        {% endif %}
+
+
+                </div>
+                <input class="form__login__bottom" type="submit" value="Submit">
+
+                <div class="form__login__utilities">
+                    <a href="{% url 'register' %}">Dont have an accout?</a>
+                    <a href="{% url 'login' %}">Already have an account?</a>
+                </div>
+            </div>
+        </div>
+    </form>
+{% endblock %}
